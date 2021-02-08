@@ -1,0 +1,167 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    color: #A7A1AE;
+    background-color: #1F2739;
+}
+
+h1 {
+    text-align: center;
+    color: #FB667A;
+}
+
+h2 {
+    text-align: left    ;
+    color: #FB667A;
+}
+
+#table.blue {
+    color: #185875;
+}
+
+#table.yellow {
+    color: #FFF842;
+}
+
+#table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #323C50;
+    font-weight: bold;
+    font-size: 1em;
+    color: #FB667A;
+
+}
+
+#table td {
+    font-weight: normal;
+    font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+    text-align: center;
+
+}
+
+#table {
+    text-align: left;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    display: table;
+    padding: 0 0 8em 0;
+}
+
+#table td, #table th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+
+#table-form {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: white;
+}
+
+#table-form #place-field, #name-field, #from-field, #input {
+    text-align: center;
+    width: 50%;
+    height: 50px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #1F2739;
+    font-size: 16px;
+    resize: none;
+    box-shadow: 10px 10px 5px grey;
+}
+
+#table-form, #label {
+    text-align: center;
+    font-size: 30px;
+    color: #FB667A;
+    background-color: #323C50;
+}
+
+
+#table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#table tr:nth-child(even) {
+    background-color: #2C3446;
+}
+
+#agenda-items-table tr:nth-child(odd) {
+    background-color: #323C50;
+}
+
+#table tr:hover {
+
+    background-color: #464A52;
+    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+
+
+.fa.fa-trash {
+    color: lightgray;
+}
+
+.fa.fa-pencil {
+    color: lightgray;
+    padding-left: 10%;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #2C3446;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #2C3446;
+    color: #cccccc;
+    font-size: large;
+}
+
+input[type=datetime-local] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #2C3446;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #2C3446;
+    color: #cccccc;
+    font-size: large;
+    text-align: center;
+}
+
+input[type=submit] {
+    width: 20%;
+    background-color: #323C50;
+    color: #A7A1AE;
+    margin: 10px;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: larger;
+}
+
+.icon {
+    padding-top: 10%;
+    font-size: 50%;
+    text-align: center;
+}
