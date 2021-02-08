@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Your Things</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://use.fontawesome.com/e93a8975bd.js"></script>
+</head>
+<body>
+<div class="content">
+    <h1>TRACK YOUR THINGS</h1>
+    <h2>Do you forget a lot of things lately?</h2>
+    <h2>I'm here to help! Let me keep track of your things for you!</h2>
+    <form id="table-form">
+        <label for="name-field">Name:</label>
+        <input type="text" id="name-field" placeholder="Name your thing!"><br>
+        <label for="place-field">Place:</label>
+        <input type="text" id="place-field" placeholder="Where did you put it?"><br>
+        <label for="from-field">From:</label>
+        <input type="text" id="from-field" placeholder="Someone important maybe &#128563?"><br>
+        <input type="submit" id="submit-button" value="Add it now!">
+    </form>
+    <table id="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Place</th>
+            <th>From</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Keys</td>
+            <td><label for="type-field"></label>
+                <select name="types" id="type-field">
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Home">Home</option>
+                    <option value="Important">Important</option>
+                </select></td>
+            <td>Kitchen</td>
+            <td>Optional</td>
+            <td><label for="date"></label>
+                <input type="datetime-local" id="date"><br></td>
+            <td><a href="#" class="delete-item fa fa-trash"></a>
+                <a href="#" class="edit-item fa fa-pencil"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="lib/jquery-3.5.1.min.js"></script>
+</body>
+</html>
