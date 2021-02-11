@@ -120,7 +120,7 @@ input[type=text], select {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #2C3446;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
     background-color: #2C3446;
@@ -132,7 +132,7 @@ input[type=datetime-local] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #2C3446;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
     background-color: #2C3446;
@@ -154,7 +154,6 @@ input[type=submit] {
 }
 
 .icon {
-    padding-top: 10%;
     font-size: 50%;
     text-align: center;
 }
