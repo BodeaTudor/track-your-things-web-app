@@ -7,14 +7,14 @@ window.TrackYourThings = {
         // var type = $("#type-field").getAttributeNames();
         var place = $("#place-field").val();
         var fromWho = $("#from-field").val();
-        // var date = $("#date").val();
+        var date = $("#date-field").val();
 
         var item = {
             name: name,
             // type: type,
             place: place,
-            fromWho: fromWho
-            // date: date
+            fromWho: fromWho,
+            dateTime: date
         };
 
         $.ajax({
@@ -46,8 +46,6 @@ window.TrackYourThings = {
 
     getItemHtml: function (item) {
 
-        var date = new Date().toLocaleDateString("ro-RO");
-
         return `<tr>
             <td>${item.name}</td>
             <td><label for="type-field"></label>
@@ -59,8 +57,7 @@ window.TrackYourThings = {
                 </select></td>
             <td>${item.place}</td>
             <td>${item.fromWho}</td>
-            <td><label for="date"></label>
-                <input type="datetime-local" id="date"><br></td>
+            <td>${item.dateTime}</td>
             <td><a href="#" class="delete-item fa fa-trash" data-id="${item.id}"></a>
                 <a href="#" class="edit-item fa fa-pencil"></a>
             </td>
