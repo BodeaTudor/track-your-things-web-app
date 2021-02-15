@@ -22,6 +22,7 @@ window.TrackYourThings = {
             data: JSON.stringify(item)
         }).done(function (response) {
             TrackYourThings.getItems()
+            location.reload();
         })
     },
 
