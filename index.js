@@ -4,14 +4,12 @@ window.TrackYourThings = {
     createItem: function () {
 
         var name = $("#name-field").val();
-        // var type = $("#type-field").getAttributeNames();
         var place = $("#place-field").val();
         var fromWho = $("#from-field").val();
         var date = $("#date-field").val();
 
         var item = {
             name: name,
-            // type: type,
             place: place,
             fromWho: fromWho,
             dateTime: date
@@ -46,8 +44,8 @@ window.TrackYourThings = {
 
     getItemHtml: function (item) {
 
-        if (item.types == null) {
-            item.types = "None";
+        if (item.category == null) {
+            item.category = "None";
         }
 
         if (item.dateTime == null) {
@@ -56,8 +54,8 @@ window.TrackYourThings = {
 
         return `<tr>
             <td>${item.name}</td>
-            <td><select name="types" id="type-field" class="type-field-class" data-id="${item.id}" ">
-                    <option>Selected: ${item.types}</option>
+            <td><select name="category" id="category-field" class="category-field-class" data-id="${item.id}" ">
+                    <option>Selected: ${item.category}</option>
                     <option value="Personal">Personal</option>
                     <option value="Work">Work</option>
                     <option value="Home">Home</option>
@@ -75,14 +73,14 @@ window.TrackYourThings = {
     },
 
 
-    updateTypeField: function (itemId, types) {
+    updateTypeField: function (itemId, category) {
 
         $.ajax({
             url: TrackYourThings.API_BASE_URL + "?id=" + itemId,
             method: "PUT",
             contentType: "application/json",
             data: JSON.stringify({
-                types: types,
+                category: category,
             })
         }).done(function (response) {
             TrackYourThings.getItems();
@@ -114,13 +112,13 @@ window.TrackYourThings = {
             TrackYourThings.deleteItem(itemId);
         });
 
-        $("#table").delegate("select.type-field-class", "change", function (event) {
+        $("#table").delegate("select.category-field-class", "change", function (event) {
             event.preventDefault();
 
             var itemId = $(this).data("id");
-            var types = $(this).find("option:selected").val();
+            var category = $(this).find("option:selected").val();
 
-            TrackYourThings.updateTypeField(itemId, types);
+            TrackYourThings.updateTypeField(itemId, category);
         });
     }
 };

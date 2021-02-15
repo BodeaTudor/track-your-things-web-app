@@ -27,7 +27,7 @@
         <thead>
         <tr>
             <th>Name</th>
-            <th>Type</th>
+            <th>Category</th>
             <th>Place</th>
             <th>From</th>
             <th>Date</th>
@@ -37,12 +37,14 @@
         <tbody>
         <tr>
             <td>Keys</td>
-            <td><label for="type-field"></label>
-                <select name="types" id="type-field">
+            <td><label for="category-field"></label>
+                <select name="category" id="category-field" class="category-field-class">
+                    <option>Selected: </option>
                     <option value="Personal">Personal</option>
                     <option value="Work">Work</option>
                     <option value="Home">Home</option>
                     <option value="Important">Important</option>
+                    <option value="None">None</option>
                 </select></td>
             <td>Kitchen</td>
             <td>Optional</td>
