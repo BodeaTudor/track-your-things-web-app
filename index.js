@@ -46,14 +46,23 @@ window.TrackYourThings = {
 
     getItemHtml: function (item) {
 
+        if (item.types == null) {
+            item.types = "None";
+        }
+
+        if (item.dateTime == null) {
+            item.dateTime = "";
+        }
+
         return `<tr>
             <td>${item.name}</td>
-            <td><label for="type-field"></label>
-                <select name="types" id="type-field">
+            <td><select name="types" id="type-field" class="type-field-class" data-id="${item.id}" ">
+                    <option>Selected: ${item.types}</option>
                     <option value="Personal">Personal</option>
                     <option value="Work">Work</option>
                     <option value="Home">Home</option>
                     <option value="Important">Important</option>
+                    <option value="None">None</option>
                 </select></td>
             <td>${item.place}</td>
             <td>${item.fromWho}</td>
@@ -61,8 +70,24 @@ window.TrackYourThings = {
             <td><a href="#" class="delete-item fa fa-trash" data-id="${item.id}"></a>
                 <a href="#" class="edit-item fa fa-pencil"></a>
             </td>
-        </tr>`
+        </tr>`;
 
+    },
+
+
+    updateTypeField: function (itemId, types) {
+
+        $.ajax({
+            url: TrackYourThings.API_BASE_URL + "?id=" + itemId,
+            method: "PUT",
+            contentType: "application/json",
+            data: JSON.stringify({
+                types: types,
+            })
+        }).done(function (response) {
+            TrackYourThings.getItems();
+            console.log(response);
+        })
     },
 
     deleteItem: function (itemId) {
@@ -87,6 +112,15 @@ window.TrackYourThings = {
             var itemId = $(this).data("id");
 
             TrackYourThings.deleteItem(itemId);
+        });
+
+        $("#table").delegate("select.type-field-class", "change", function (event) {
+            event.preventDefault();
+
+            var itemId = $(this).data("id");
+            var types = $(this).find("option:selected").val();
+
+            TrackYourThings.updateTypeField(itemId, types);
         });
     }
 };
